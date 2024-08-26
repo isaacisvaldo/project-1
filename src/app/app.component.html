@@ -9,11 +9,20 @@
 
     <input type="text" (keyup)="getRealWord($event)" id="lname" name="lname" placeholder="" [value]="inputText" [type]="inputype" [disabled]="isDisable">
     <br>
-    <button (click)="enableInput()" title="Habilitar o input">Habilitar</button>
-    <button (click)="disableInput()">Desabilitar</button>
+    <button 
+      [class]="{
+        'green-button':true
+      }"
+
+    (click)="enableInput()" [attr.title]="buttonTitle" [attr.disabled]="DisabledButton ? true :null">Habilitar</button>
+    <button 
+    [class.red-button]="true"
+    (click)="disableInput()" [attr.title]="buttonTitle2" [attr.disabled]="DisabledButton2 ? true :null">Desabilitar</button>
     <br>
     <button (click)="setPasswordInput()">Hash</button>
     <button (click)="setTextInput()">Plane Text</button>
+
+    
   
 
 </body>
